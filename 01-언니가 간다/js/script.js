@@ -23,17 +23,18 @@ $(function () {
   $window.on('resize', function () {
     getHeight();
     console.log(scrollHeight);
+
+    // 스크롤 이벤트를 강제로 발생시킴 --> 최종 언니 위치 수정
+    $window.trigger('scroll');
   });
 
   // 스크롤이 발생하면
   $window.on('scroll', function () {
     // 사용자의 (세로)스크롤 값을 구해서
     let scrollTop = $(this).scrollTop();
-    // console.log(scrollTop);
 
     // 비율을 구하자 공식은, (대상 / 기준) * 100
     let percent = (scrollTop / scrollHeight) * 100 + '%';
-    // console.log(percent);
 
     // $girl의 left로 적용(%)
     $girl.css('left', percent);
