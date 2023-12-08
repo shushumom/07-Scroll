@@ -2,7 +2,7 @@ $(function () {
   // 대상을 변수에 저장
   const $window = $(window);
   const $document = $(document);
-  const $progressBar = $('.progress-bar');
+  const $girl = $('.girl');
 
   // 크기를 구해오는 제이쿼리 메서드 : outerHeight()
   const windowHeight = $window.outerHeight();
@@ -22,9 +22,9 @@ $(function () {
 
     // 비율을 구하자 공식은, (대상 / 기준) * 100
     let percent = (scrollTop / scrollHeight) * 100 + '%';
-    console.log(percent);
+    // console.log(percent);
 
-    // $progressBar의 width로 적용(%)
-    $progressBar.css('width', percent);
+    // $girl의 left로 적용(%)
+    $girl.css('left', percent);
   });
 });
